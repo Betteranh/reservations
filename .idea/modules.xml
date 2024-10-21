@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/pid-reservations.iml" filepath="$PROJECT_DIR$/.idea/pid-reservations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pid-reservations/pid-reservations.iml" filepath="$PROJECT_DIR$/pid-reservations/pid-reservations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/reservations-main.iml" filepath="$PROJECT_DIR$/.idea/reservations-main.iml" />
     </modules>
   </component>
 </project>
