@@ -28,6 +28,16 @@ public class ArtistController {
         return "artist/index";
     }
 
+    @GetMapping("/artists/{id}")
+    public String show(Model model, @PathVariable("id") long id) {
+        Artist artist = service.getArtist(id);
+
+        model.addAttribute("artist", artist);
+        model.addAttribute("title", "Fiche d'un artiste");
+
+        return "artist/show";
+    }
+
     @GetMapping("/artists/{id}/edit")
     public String edit(Model model, @PathVariable("id") long id, HttpServletRequest request) {
         Artist artist = service.getArtist(id);
@@ -86,5 +96,15 @@ public class ArtistController {
         return "redirect:/artists/"+artist.getId();
     }
 
+    @DeleteMapping("/artists/{id}")
+    public String delete(@PathVariable("id") long id, Model model) {
+        Artist existing = service.getArtist(id);
+
+        if(existing!=null) {
+            service.deleteArtist(id);
+        }
+
+        return "redirect:/artists";
+    }
 
 }
