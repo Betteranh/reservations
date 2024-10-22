@@ -1,6 +1,8 @@
 package com.icc.pid_reservations.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="artists")
@@ -8,7 +10,13 @@ public class Artist {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
+
+    @NotBlank(message = "First name is mandatory")
+    @Size(min = 2, max = 60, message = "First name must be between 2 and 60 characters")
     private String firstname;
+
+    @NotBlank(message = "Last name is mandatory")
+    @Size(min = 2, max = 60, message = "Last name must be between 2 and 60 characters")
     private String lastname;
 
     protected Artist() {}
