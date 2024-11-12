@@ -102,6 +102,11 @@
 			<plugin>
 				<groupId>org.flywaydb</groupId>
 				<artifactId>flyway-maven-plugin</artifactId>
+				<configuration>
+					<url>jdbc:mysql://localhost:3306/reservations?useSSL=false&amp;serverTimezone=Europe/Brussels</url>
+					<user>root</user>
+					<password>Betteranh64!</password>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
